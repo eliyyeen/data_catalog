@@ -1,0 +1,105 @@
+version: 1
+source: DataHub
+owners:
+  users:
+    - BST
+url: "https://github.com/datahub-project/datahub/"
+nodes:
+  - name: Classification
+    description: A set of terms related to Data Classification
+    knowledge_links:
+      - label: Wiki link for classification
+        url: "https://en.wikipedia.org/wiki/Classification"
+    terms:
+      - name: Sensitive
+        description: Sensitive Data
+        custom_properties:
+          is_confidential: false
+      - name: Confidential
+        description: Confidential Data
+        custom_properties:
+          is_confidential: true
+      - name: HighlyConfidential
+        description: Highly Confidential Data
+        custom_properties:
+          is_confidential: true
+  - name: PII
+    description: All terms related to personal information
+    owners:
+      users:
+        - BST
+    terms:
+      - name: First Name
+        description: An individual's first name
+        inherits:
+          - Classification.Confidential
+        owners:
+          users:
+            - BST
+      - name: Last Name
+        description: An individual's last name
+        inherits:
+          - Classification.Confidential
+        owners:
+          users:
+            - BST
+
+      - name: Email
+        description: An individual's email address
+        inherits:
+          - Classification.Confidential
+        owners:
+          users:
+            - BST
+      - name: Address
+        description: A physical address
+      - name: Gender
+        description: The gender identity of the individual
+        inherits:
+          - Classification.Sensitive
+  - name: Ecommerce
+    description: Provides basic concepts such as product, category, brand, department
+    terms:
+      - name: Product
+        description: Product name
+      - name: Category
+        description: Product category
+      - name: Department
+        description: Product department
+      - name: Brand
+        description: Product brand
+      - name: Price
+        description: Product price
+      - name: Cost
+        description: Product cost
+      - name: Distribution
+        description: Distribution center name
+      - name: Total_Orders
+        description: Total orders by product
+      - name: Top_Spenders
+        description: Top users
+      - name: Order_Status
+        description: order status
+      - name: Shipment_Status
+        description: order shipment status
+      - name: Order_Status
+        description: order overall status
+      - name: Return_Rate
+        description: orders return rate
+      - name: Low_Risk
+        description: low risk
+      - name: Medium_Risk
+        description: medium risk
+      - name: High_Risk
+        description: high risk
+      - name: Address
+        description: address
+      - name: City
+        description: city
+      - name: User_ID
+        description: user id
+      - name: Query
+        description: query
+
+
+

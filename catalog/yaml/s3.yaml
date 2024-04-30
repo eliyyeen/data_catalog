@@ -1,0 +1,15 @@
+source:
+  type: s3
+  config:
+    path_specs:
+      -
+        include: "s3://bst-demo-data/distributions/*.*"
+
+    aws_config:
+      aws_access_key_id:
+      aws_secret_access_key:
+      aws_region: eu-west-1
+      aws_role: "arn:aws:iam::163124817352:role/BST_to_CTO_Development"
+    env: "PROD"
+    profiling:
+      enabled: false

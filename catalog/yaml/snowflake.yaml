@@ -1,0 +1,33 @@
+source:
+    type: snowflake
+    config:
+        account_id:
+        include_table_lineage: true
+        include_view_lineage: true
+        include_tables: true
+        include_views: true
+        apply_view_usage_to_tables: true
+        email_domain: blackswan-technologies.com
+        format_sql_queries: true
+        include_column_lineage: true
+        upstream_lineage_in_report: true
+
+
+
+        profiling:
+            enabled: true
+            profile_table_level_only: false
+        stateful_ingestion:
+            enabled: true
+        classification:
+            enabled: True
+        warehouse: COMPUTE_WH
+        role: accountadmin
+        username:
+        password:
+        database_pattern:
+            allow:
+                - bst
+        schema_pattern:
+            allow:
+                - demo

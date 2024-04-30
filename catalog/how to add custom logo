@@ -1,0 +1,40 @@
+cd to some_dir
+cp file_server.py
+update logo path in the file_server.py or place logo file at "/opt/bst/bst.png"
+run
+nohup python3.7 file_server.py &
+IP:5000/download will serve logo file
+
+
+
+in demo/docker-compose.yml  file under datahub-gms:
+set the following env var
+      - REACT_APP_LOGO_URL=http://ec2-54-171-119-244.eu-west-1.compute.amazonaws.com:5000/logo
+      - REACT_APP_FAVICON_URL=
+
+
+on server
+cd to /root/.datahub/quickstart
+cp demo/docker-compose.yml contents and paste in /root/.datahub/quickstart/docker-compose.yml
+
+
+
+stop existing services if running
+datahub docker quickstart --stop
+
+start by providing custom docker-compose file path
+datahub docker quickstart -f /root/.datahub/quickstart/docker-compose.yml  --build-locally
+
+
+check following variables are set on following container:
+
+run docker ps
+and find container id for linkedin/datahub-gms:head
+
+run
+docker exec -it {container_id} /bin/sh
+env | grep REACT_APP_LOGO_URL
+env | grep REACT_APP_FAVICON_URL
+
+
+

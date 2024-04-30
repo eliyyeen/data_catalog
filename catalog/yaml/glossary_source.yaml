@@ -1,0 +1,5 @@
+source:
+  type: datahub-business-glossary
+  config:
+    file: glossary.yml
+    enable_auto_id: true

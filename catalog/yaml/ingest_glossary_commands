@@ -1,0 +1,8 @@
+pip install 'acryl-datahub[datahub-business-glossary]'
+
+create glossary_sources.yaml file and copy contents of glossary_source.yaml into it
+create glossary.yml file and copy contents of glossary.yml into it
+
+run
+datahub ingest -c glossary_source.yaml
+
