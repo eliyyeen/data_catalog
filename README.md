@@ -1,4 +1,10 @@
-Demonstrates how to catalog data in datahub (https://datahubproject.io/) and make it discoverable and trace the lineage of data
+Demonstrates use of a data catalog for: 
+- Adding data in a catalog, we use datahub for this example (https://datahubproject.io/)
+- To make it discoverable
+- To create data glossary
+- To create data lineage
+- To be able to check different stats
+- And to be to search it
 
 Here is demo video:
 https://www.loom.com/share/d6fb0822d07e4925ba44c44c69f22bce?sid=c802dac5-4912-4c4f-a094-ae8528e67177
